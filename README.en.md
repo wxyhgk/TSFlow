@@ -76,7 +76,7 @@ calculations/               local research calculations; excluded from releases
 frontend/                   local workbench; excluded from the first source release
 ```
 
-The reusable Python package is currently published internally as `uma-workflows` for compatibility. The backend package remains `uma-platform-api`; the public project name is TSFlow.
+The Python distribution is named `ts-flow`. Its import namespace remains `uma_workflows`, and its source directory remains `packages/uma-workflows/` for compatibility. The backend package remains `uma-platform-api`; the public project name is TSFlow.
 
 ## Quick start
 
@@ -90,6 +90,15 @@ scripts/run-backend.sh
 ```
 
 The API listens on `http://127.0.0.1:8010` by default, with OpenAPI docs at `/docs`. Model weights are obtained separately under their upstream terms and are not distributed with this repository.
+
+Install the standalone workflow library from GitHub:
+
+```bash
+pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "ts-flow[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+```
+
+After a PyPI release, the short commands will be `pip install ts-flow` and `pip install "ts-flow[all]"`. This project has not yet been released to PyPI. The name `tsflow` on PyPI belongs to a different project.
 
 Run the focused smoke tests with:
 

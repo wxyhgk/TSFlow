@@ -40,7 +40,7 @@ uv venv --python 3.13 .venv-uma
 scripts/install-backend-env.sh
 ```
 
-`scripts/install-backend-env.sh` 会把本地 `uma-workflows` 和后端以 editable 方式安装，
+`scripts/install-backend-env.sh` 会把本地 `ts-flow` 算法包和后端以 editable 方式安装，
 并补齐 CLI 在 MPS/距离几何路径使用的 `pymatgen`。环境快照与项目依赖声明也已保留。
 
 ## 当前支持

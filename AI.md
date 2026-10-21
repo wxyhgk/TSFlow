@@ -4,7 +4,7 @@
 
 ## 项目定位
 
-TSFlow 是面向大分子反应的可验证过渡态搜索后端与算法库。公开项目名是 `TSFlow`，当前 Python 兼容包名为 `uma-workflows`，后端包名为 `uma-platform-api`。UMA 是当前主力计算引擎，但项目设计允许接入 xTB、Gaussian 和其他 provider。
+TSFlow 是面向大分子反应的可验证过渡态搜索后端与算法库。公开项目名是 `TSFlow`，Python 发行包名为 `ts-flow`，导入名保持 `uma_workflows`，源码目录保持 `packages/uma-workflows/`，后端包名为 `uma-platform-api`。PyPI 的 `tsflow` 属于其他项目，不要将其作为本项目的安装命令；`ts-flow` 在正式发布到 PyPI 前使用 GitHub 或本地源码安装。UMA 是当前主力计算引擎，但项目设计允许接入 xTB、Gaussian 和其他 provider。
 
 核心链路是：
 

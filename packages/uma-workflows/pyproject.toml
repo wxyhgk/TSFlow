@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "uma-workflows"
+name = "ts-flow"
 version = "0.1.4"
 license = { text = "MIT" }
 description = "TSFlow transition-state workflows and validation tools"

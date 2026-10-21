@@ -142,12 +142,14 @@ scripts/run-backend.sh
 
 服务默认监听 `http://127.0.0.1:8010`，OpenAPI 文档位于 `/docs`。模型权重需要按照上游授权单独获取，不随仓库分发。
 
-算法库也可以独立安装：
+算法库的发行包名为 **`ts-flow`**，可从 GitHub 独立安装：
 
 ```bash
-pip install uma-workflows
-pip install "uma-workflows[all]"
+pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "ts-flow[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
 ```
+
+发布到 PyPI 后即可使用 `pip install ts-flow` 或 `pip install "ts-flow[all]"`。目前尚未发布到 PyPI。Python 导入名保持 `uma_workflows`；`pip install tsflow` 安装的是其他项目。
 
 独立 Python API、TS 输入约定和结果判定见 [过渡态工作流](docs/transition-state-workflow.md)；路由和 provider 的替换位置见 [架构与扩展](docs/architecture.md)。
 

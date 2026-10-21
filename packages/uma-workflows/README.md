@@ -1,9 +1,9 @@
-# TSFlow workflow engine (`uma-workflows`)
+# TSFlow workflow engine (`ts-flow`)
 
-`uma-workflows` is the reusable TSFlow computational chemistry engine shared by
-the FastAPI service, command-line tools, benchmarks, and research studies. The
-package name remains `uma-workflows` for compatibility with existing installs;
-TSFlow is the public project name.
+`ts-flow` is the reusable TSFlow computational chemistry engine shared by
+the FastAPI service, command-line tools, benchmarks, and research studies.
+The Python import namespace remains `uma_workflows`, and the source directory
+remains `packages/uma-workflows/`. TSFlow is the public project name.
 
 The package must not import FastAPI, backend Pydantic schemas, repositories, or
 project-specific data paths.
@@ -71,16 +71,17 @@ initialized from the already screened primary imaginary mode; it does not
 silently diagonalize the raw Hessian again and choose a potentially different
 lowest mode.
 
-Install only the capabilities a project needs:
+Install from GitHub until the first PyPI release:
 
 ```bash
-pip install uma-workflows
-pip install "uma-workflows[frequencies]"
-pip install "uma-workflows[dmf]"
-pip install "uma-workflows[sella]"
-pip install "uma-workflows[uma]"
-pip install "uma-workflows[all]"
+pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "ts-flow[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
 ```
+
+After publication to PyPI, install only the capabilities a project needs with
+`pip install ts-flow`, or select extras such as `ts-flow[frequencies]`,
+`ts-flow[dmf]`, `ts-flow[sella]`, `ts-flow[uma]`, and `ts-flow[all]`.
+The PyPI name `tsflow` belongs to another project.
 
 The base package contains NumPy/ASE geometry, geomeTRIC normal-mode analysis,
 and validation utilities. Public packages use lazy exports, so
