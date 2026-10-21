@@ -45,6 +45,70 @@ TSFlow（Transition-State Flow）把大分子过渡态搜索组织成一条可�
 
 算法库不依赖 FastAPI、数据库或项目私有路径；后端通过模块化路由、任务 Worker 和 provider 注册表提供 HTTP 接口。未来可以在其上增加 AI 反应定义层，让调用方提交分子、反应位点和计算偏好，由规划层生成明确的计算任务。
 
+### 如何让 AI 使用 TSFlow
+
+TSFlow 可以作为 AI 规划器的计算后端。AI 负责把自然语言反应描述转换成结构化的反应定义，TSFlow 负责执行计算并返回可验证的结果：
+
+```text
+用户描述反应
+    -> AI 识别反应物、产物、原子映射和反应位点
+    -> 人工检查 AI 生成的反应计划
+    -> POST /api/v1/jobs
+    -> UMA / xTB / Gaussian 执行工作流
+    -> Hessian、虚频和双向 IRC 验证
+```
+
+AI 规划器至少应生成以下信息：
+
+- 反应物和产物的三维结构，原子顺序必须一致；
+- 总电荷和自旋多重度；
+- 断键、成键和配位关系，使用从 0 开始的原子索引；
+- 计算引擎和模型，例如 `uma-s-1p2p1`；
+- 是否使用已有 TS 初猜，以及是否运行双向 IRC；
+- 失败时的备选路径或参数，而不是把未验证结构直接当作 TS。
+
+例如，AI 生成的**中间反应计划**可以先整理成下面的 JSON。这里的文件路径不是后端 API 字段；调用方需要读取文件，把它们展开成完整的 `AtomicStructure` 对象后再提交：
+
+```json
+{
+  "calculation": "transition_state_search",
+  "model_name": "uma-s-1p2p1",
+  "structure": "reactant.json",
+  "product_structure": "product.json",
+  "transition_state_guess": "ts_guess.json",
+  "reaction_coordinates": [
+    {"atom_i": 23, "atom_j": 47, "kind": "breaking", "label": "C-Cl"},
+    {"atom_i": 23, "atom_j": 81, "kind": "forming", "label": "C-Li"},
+    {"atom_i": 81, "atom_j": 14, "kind": "coordination", "label": "Li-O"}
+  ],
+  "parameters": {
+    "irc_follow": true,
+    "compute_frequencies": true,
+    "path_initializer_id": "fbenm.correlated",
+    "path_optimizer_id": "dmf.direct_maxflux"
+  }
+}
+```
+
+一个适合放进 LLM system prompt 的约束可以是：
+
+```text
+你是 TSFlow 反应规划器。只使用输入结构中的原子编号，不要编造编号。
+输出反应物、产物、断键、成键、配位关系、电荷、自旋和计算参数。
+如果产物、原子映射或关键位点不明确，先提出问题，不要猜测。
+不要把任务执行完成写成过渡态已经验证；验证必须以 Hessian、虚频和 IRC 结果为准。
+```
+
+结构文件需要由调用方读取后展开为 API 所需的 `AtomicStructure`；TSFlow 不会根据一段自然语言自动猜测原子编号。完成展开后的 API payload 才能这样提交：
+
+```bash
+curl -X POST http://127.0.0.1:8010/api/v1/jobs \
+  -H 'Content-Type: application/json' \
+  --data @api-payload.json
+```
+
+当前版本没有内置通用 LLM API、API key 管理或“只输入分子和位点就自动完成全部搜索”的入口。可以用 OpenAI、Gemini、Claude 或本地模型实现规划层，但 AI 输出必须经过结构、原子映射和反应位点检查；`succeeded` 也不等于过渡态已经被科学验证。`AI.md` 是面向代码代理的仓库操作指南，不是运行时 AI 接口。
+
 ## 工作流总览
 
 ```text
@@ -177,6 +241,7 @@ pip install "tsflow-chem[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdire
 - [GitHub 发布准备](docs/github-release.md)
 - [当前项目状态](PROJECT_STATUS.md)
 - [算法库说明](packages/uma-workflows/README.md)
+- [代码代理操作指南](AI.md)
 
 ## 许可证与模型权重
 
