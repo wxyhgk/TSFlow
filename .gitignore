@@ -1,0 +1,48 @@
+.DS_Store
+
+# Local environments and runtime state
+.venv-uma/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/*.pyc
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite3-shm
+**/*.sqlite3-wal
+**/*.log
+
+# Local model weights
+model-assets/**/checkpoints/
+**/*.pt
+**/*.pth
+**/*.ckpt
+**/*.safetensors
+
+# Frontend build output and dependencies
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+
+# Local research, calculation results, deliveries and source recovery
+/data/
+/mol/
+/calculations/
+/outputs/
+/archive/
+/.remote-calc/
+/.ppt-build/
+/.chart-data-*/
+
+# Case reports remain local; general project documentation is versioned
+/docs/mr-*/
+/docs/gd451-*/
+
+# Environment files and local build caches
+**/.env
+**/.env.*
+!**/.env.example
+!**/*.env.example
+**/coverage/
+**/*.py[cod]

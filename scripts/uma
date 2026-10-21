@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PYTHONPATH="$PROJECT_DIR/backend:$PROJECT_DIR/packages/uma-workflows/src${PYTHONPATH:+:$PYTHONPATH}"
+exec "$PROJECT_DIR/.venv-uma/bin/python" -m app.cli "$@"

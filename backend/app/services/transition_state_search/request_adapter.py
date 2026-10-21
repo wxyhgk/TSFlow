@@ -1,0 +1,100 @@
+from __future__ import annotations
+
+from app.contracts.jobs import JobCreate
+from uma_workflows.transition_states.workflow import (
+    EndpointConfig,
+    IrcConfig,
+    PathConfig,
+    SaddleConfig,
+    ScreeningConfig,
+    TransitionSearchConfig,
+)
+
+
+def config_from_request(request: JobCreate) -> TransitionSearchConfig:
+    params = request.parameters
+    return TransitionSearchConfig(
+        endpoint=EndpointConfig(
+            enabled=params.endpoint_preopt,
+            fmax=params.endpoint_preopt_fmax,
+            max_steps=params.endpoint_preopt_max_steps,
+        ),
+        path=PathConfig(
+            initializer_id=params.path_initializer_id,
+            optimizer_id=params.path_optimizer_id,
+            nmove=params.nmove,
+            ensemble_size=params.path_ensemble_size,
+            max_iterations=params.dmf_max_iterations,
+            convergence=params.dmf_convergence,
+            path_points=params.path_points,
+            update_teval=params.update_teval,
+            accept_every_trial_step=params.dmf_accept_every_trial_step,
+            bias_mode=params.path_bias_mode,
+            repulsion_strength_ev_per_a2=(
+                params.path_repulsion_strength_ev_per_a2
+            ),
+            repulsion_cutoff_scale=params.path_repulsion_cutoff_scale,
+            synchronization_strength_ev=(
+                params.reaction_coordinate_sync_strength_ev
+            ),
+            coordinate_range_strength_ev=(
+                params.reaction_coordinate_range_strength_ev
+            ),
+            coordinate_schedule_strength_ev=(
+                params.reaction_coordinate_schedule_strength_ev
+            ),
+            scaffold_strength_ev_per_a2=(
+                params.path_scaffold_strength_ev_per_a2
+            ),
+            near_barrierless_threshold_ev=(
+                params.near_barrierless_threshold_ev
+            ),
+        ),
+        saddle=SaddleConfig(
+            enabled=params.sella_refine,
+            final_refinement_engine=params.saddle_final_refinement_engine,
+            mps_fmax=params.sella_mps_fmax,
+            cpu_refine=params.sella_cpu_refine,
+            cpu_fmax=params.sella_cpu_fmax,
+            max_steps=params.sella_max_steps,
+            active_region_hops=params.sella_active_region_hops,
+            path_mode_only=params.sella_path_mode_only,
+            relaxed_scan=params.relaxed_scan_refine,
+            relaxed_scan_progress=params.relaxed_scan_progress,
+            relaxed_scan_fmax=params.relaxed_scan_fmax,
+            relaxed_scan_max_steps=params.relaxed_scan_max_steps,
+            automatic_fallback=params.saddle_automatic_fallback,
+            fallback_nearby_frames=params.saddle_fallback_nearby_frames,
+            fallback_max_candidates=params.saddle_fallback_max_candidates,
+        ),
+        screening=ScreeningConfig(
+            compute_frequencies=params.compute_frequencies,
+            active_region_hops=params.frequency_active_region_hops,
+            max_atoms=params.frequency_max_atoms,
+            delta_a=params.frequency_delta_a,
+            imaginary_threshold_cm1=(
+                params.imaginary_frequency_threshold_cm1
+            ),
+            force_full_hessian=params.irc_follow,
+            hessian_method=params.hessian_method,
+            maximum_hessian_asymmetry=params.maximum_hessian_asymmetry,
+        ),
+        irc=IrcConfig(
+            enabled=params.irc_follow,
+            engine=params.irc_engine,
+            steps=params.irc_steps,
+            dx=params.irc_dx,
+            inner_steps=params.irc_inner_steps,
+            inner_fmax=params.irc_inner_fmax,
+            fmax=params.irc_fmax,
+            endpoint_distance_threshold_a=(
+                params.irc_endpoint_distance_threshold_a
+            ),
+            require_endpoint_match=params.irc_require_endpoint_match,
+            relax_endpoints=params.irc_relax_endpoints,
+            endpoint_relaxation_fmax=params.irc_endpoint_relaxation_fmax,
+            endpoint_relaxation_max_steps=(
+                params.irc_endpoint_relaxation_max_steps
+            ),
+        ),
+    )

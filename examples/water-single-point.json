@@ -1,0 +1,13 @@
+{
+  "calculation": "single_point",
+  "model_name": "uma-s-1p2p1",
+  "structure": {
+    "charge": 0,
+    "spin": 1,
+    "atoms": [
+      {"symbol": "O", "position": [0.0, 0.0, 0.0]},
+      {"symbol": "H", "position": [0.9572, 0.0, 0.0]},
+      {"symbol": "H", "position": [-0.239, 0.927, 0.0]}
+    ]
+  }
+}

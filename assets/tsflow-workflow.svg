@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TSFlow verifiable transition-state search workflow</title>
+  <desc id="desc">A schematic showing reactants, a transition-state saddle, products, and the TSFlow validation pipeline.</desc>
+  <rect width="1600" height="900" fill="#ffffff"/>
+
+  <text x="120" y="156" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" letter-spacing="1">TSFlow</text>
+  <text x="120" y="204" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="2">VERIFIABLE TRANSITION-STATE SEARCH FOR LARGE MOLECULES</text>
+  <line x1="120" y1="246" x2="1480" y2="246" stroke="#dedede" stroke-width="2"/>
+
+  <!-- Qualitative energy profile, separate from the molecular sketches. -->
+  <line x1="150" y1="615" x2="1460" y2="615" stroke="#dedede" stroke-width="2"/>
+  <path d="M150 592 C320 592 430 601 550 586 S712 494 814 494 S950 592 1080 592 S1330 608 1460 608" fill="none" stroke="#555555" stroke-width="3"/>
+  <circle cx="814" cy="494" r="5" fill="#161616"/>
+  <text x="814" y="477" text-anchor="middle" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="17">TS / saddle</text>
+  <text x="150" y="646" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="1">QUALITATIVE ENERGY PROFILE</text>
+  <text x="1460" y="646" text-anchor="end" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="15">reaction coordinate →</text>
+
+  <!-- reactant molecule -->
+  <g stroke="#909090" stroke-width="5" stroke-linecap="round">
+    <line x1="202" y1="432" x2="250" y2="384"/><line x1="250" y1="384" x2="318" y2="399"/>
+    <line x1="250" y1="384" x2="263" y2="316"/><line x1="318" y1="399" x2="352" y2="454"/>
+    <line x1="318" y1="399" x2="375" y2="370"/>
+  </g>
+  <g fill="#555555" stroke="#ffffff" stroke-width="3"><circle cx="202" cy="432" r="18"/><circle cx="250" cy="384" r="22"/><circle cx="318" cy="399" r="21"/><circle cx="263" cy="316" r="18"/><circle cx="352" cy="454" r="18"/><circle cx="375" cy="370" r="18"/></g>
+  <text x="180" y="285" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">R</text>
+  <text x="210" y="285" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="20">endpoint geometry</text>
+
+  <!-- transition state -->
+  <g stroke="#909090" stroke-width="4" stroke-linecap="round">
+    <line x1="724" y1="428" x2="780" y2="370"/><line x1="780" y1="370" x2="852" y2="388"/>
+    <line x1="780" y1="370" x2="803" y2="302"/><line x1="852" y1="388" x2="900" y2="438"/>
+    <line x1="852" y1="388" x2="918" y2="350"/>
+    <line x1="724" y1="428" x2="900" y2="438" stroke="#333333" stroke-dasharray="10 10"/>
+  </g>
+  <g fill="#333333" stroke="#ffffff" stroke-width="3"><circle cx="724" cy="428" r="20"/><circle cx="780" cy="370" r="24"/><circle cx="852" cy="388" r="23"/><circle cx="803" cy="302" r="20"/><circle cx="900" cy="438" r="20"/><circle cx="918" cy="350" r="20"/></g>
+  <text x="670" y="285" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">TS</text>
+  <text x="720" y="285" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="20">Hessian + imaginary mode</text>
+
+  <!-- product molecule -->
+  <g stroke="#909090" stroke-width="5" stroke-linecap="round">
+    <line x1="1224" y1="432" x2="1274" y2="380"/><line x1="1274" y1="380" x2="1342" y2="400"/>
+    <line x1="1274" y1="380" x2="1286" y2="316"/><line x1="1342" y1="400" x2="1385" y2="456"/>
+    <line x1="1342" y1="400" x2="1400" y2="365"/><line x1="1224" y1="432" x2="1385" y2="456"/>
+  </g>
+  <g fill="#555555" stroke="#ffffff" stroke-width="3"><circle cx="1224" cy="432" r="18"/><circle cx="1274" cy="380" r="22"/><circle cx="1342" cy="400" r="21"/><circle cx="1286" cy="316" r="18"/><circle cx="1385" cy="456" r="18"/><circle cx="1400" cy="365" r="18"/></g>
+  <text x="1210" y="285" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">P</text>
+  <text x="1240" y="285" fill="#737373" font-family="Arial, Helvetica, sans-serif" font-size="20">IRC endpoint match</text>
+
+  <!-- pipeline -->
+  <line x1="120" y1="690" x2="1480" y2="690" stroke="#dedede" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g fill="#161616" font-size="18" font-weight="700" text-anchor="middle">
+      <text x="220" y="744">01</text><text x="490" y="744">02</text><text x="760" y="744">03</text><text x="1030" y="744">04</text><text x="1300" y="744">05</text>
+    </g>
+    <g fill="#555555" font-size="21" font-weight="700" text-anchor="middle">
+      <text x="220" y="778">ENDPOINTS</text><text x="490" y="778">PATH</text><text x="760" y="778">SADDLE</text><text x="1030" y="778">HESSIAN</text><text x="1300" y="778">IRC</text>
+    </g>
+    <g fill="#737373" font-size="16" text-anchor="middle">
+      <text x="220" y="803">pre-optimization</text><text x="490" y="803">FB-ENM / DMF</text><text x="760" y="803">refinement</text><text x="1030" y="803">frequency screen</text><text x="1300" y="803">two directions</text>
+    </g>
+  </g>
+</svg>
