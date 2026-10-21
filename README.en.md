@@ -76,7 +76,7 @@ calculations/               local research calculations; excluded from releases
 frontend/                   local workbench; excluded from the first source release
 ```
 
-The Python distribution is named `ts-flow`. Its import namespace remains `uma_workflows`, and its source directory remains `packages/uma-workflows/` for compatibility. The backend package remains `uma-platform-api`; the public project name is TSFlow.
+The Python distribution is named `tsflow-chem`. Its import namespace remains `uma_workflows`, and its source directory remains `packages/uma-workflows/` for compatibility. The backend package remains `uma-platform-api`; the public project name is TSFlow.
 
 ## Quick start
 
@@ -94,11 +94,11 @@ The API listens on `http://127.0.0.1:8010` by default, with OpenAPI docs at `/do
 Install the standalone workflow library from GitHub:
 
 ```bash
-pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
-pip install "ts-flow[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "tsflow-chem @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "tsflow-chem[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
 ```
 
-After a PyPI release, the short commands will be `pip install ts-flow` and `pip install "ts-flow[all]"`. This project has not yet been released to PyPI. The name `tsflow` on PyPI belongs to a different project.
+After a PyPI release, the short commands will be `pip install tsflow-chem` and `pip install "tsflow-chem[all]"`. This project has not yet been released to PyPI. The names `tsflow` and `ts-flow` on PyPI belong to a different project.
 
 Run the focused smoke tests with:
 

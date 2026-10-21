@@ -13,7 +13,7 @@ dependencies = [
   "fastapi>=0.115,<1.0",
   "pydantic-settings>=2.6,<3.0",
   "python-multipart>=0.0.20",
-  "ts-flow[frequencies]",
+  "tsflow-chem[frequencies]",
   "uvicorn[standard]>=0.32,<1.0",
 ]
 
@@ -42,4 +42,4 @@ testpaths = ["tests"]
 
 
 [tool.uv.sources]
-ts-flow = { path = "../packages/uma-workflows", editable = true }
+tsflow-chem = { path = "../packages/uma-workflows", editable = true }

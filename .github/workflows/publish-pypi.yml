@@ -1,4 +1,4 @@
-name: Publish ts-flow to PyPI
+name: Publish tsflow-chem to PyPI
 
 on:
   workflow_dispatch:

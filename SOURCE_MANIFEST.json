@@ -1,14 +1,14 @@
 {
-  "created_utc": "2026-10-21T11:15:53.509434+00:00",
-  "source_head": "95e1f64f6f7c8fa6dd1528a2e7c24229baa27e97",
+  "created_utc": "2026-10-21T11:36:53.394176+00:00",
+  "source_head": "f0abef1d55ed72c3b012e17a8de6dcb27c3bb507",
   "source_has_local_changes": false,
   "scope": "Current working-tree source snapshot; no Git history, weights or local research",
   "file_count": 310,
   "files": [
     {
       "path": ".github/workflows/publish-pypi.yml",
-      "bytes": 770,
-      "sha256": "bd725991133a10ab8c3de66ec192399eb070eb26c997fe150f6f051ce70f0a2c"
+      "bytes": 774,
+      "sha256": "6d1a3e88019e38d106841ab7c4bd2b1e789a2e32ec757e529d73085a731bd40f"
     },
     {
       "path": ".gitignore",
@@ -17,8 +17,8 @@
     },
     {
       "path": "AI.md",
-      "bytes": 5251,
-      "sha256": "c9a950b07120cc73bd78d73f4cba60a389b538983c89142691554e5ebcb0ae61"
+      "bytes": 5215,
+      "sha256": "da363a40f70a2ff7423357e1148ae11eea000995138e76ecf54d0e1c7ebd1d8f"
     },
     {
       "path": "LICENSE",
@@ -32,13 +32,13 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 5863,
-      "sha256": "499043ef4a590ea0a25b1be14374f708cc70235509ddb0c4f1be2df3d33e0f3d"
+      "bytes": 5897,
+      "sha256": "95178103014e966a035c232110eb8bdc53ddb64b405ed2bb7d77d1bea234f63d"
     },
     {
       "path": "README.md",
-      "bytes": 11683,
-      "sha256": "7400611d11e62ecab6c06bd4e8c1c24b1f20afe200d929915d11e8f1e2ea826f"
+      "bytes": 11732,
+      "sha256": "db416188b646ad57e7bc0569de1fbfa02d06c93766459252a7d7e8fc4e2a62f0"
     },
     {
       "path": "assets/tsflow-workflow.png",
@@ -57,8 +57,8 @@
     },
     {
       "path": "backend/README.md",
-      "bytes": 3120,
-      "sha256": "37e20641ee74adc4c7dbe58edf8acbcbc6cacb1a360e776f5c3bb8a4f4cdd3dc"
+      "bytes": 3124,
+      "sha256": "7b1f97529a63a45bde3cec972548779aeb44cd196f11af24e0eedad2a71660e8"
     },
     {
       "path": "backend/app/README.md",
@@ -832,8 +832,8 @@
     },
     {
       "path": "backend/pyproject.toml",
-      "bytes": 885,
-      "sha256": "f0d6789592fd7d2a83a01bfa9d578d9659f2a497c707dddaaf5411a9237f2b64"
+      "bytes": 893,
+      "sha256": "7c77328db9a0af040ed629b74e8f420ac4c952c50c8805815190a3d149aaa938"
     },
     {
       "path": "backend/tests/conftest.py",
@@ -972,8 +972,8 @@
     },
     {
       "path": "docs/github-release.md",
-      "bytes": 3806,
-      "sha256": "ece083649d8e743786803d9b4e01e5f18150cca6ae80e817db890e5ac349a41d"
+      "bytes": 3810,
+      "sha256": "2b026fa4ae9b4fe994837576ad2bea186046fb82bed46c81a095f0e122ca08cc"
     },
     {
       "path": "docs/project-layout.md",
@@ -1032,13 +1032,13 @@
     },
     {
       "path": "packages/uma-workflows/README.md",
-      "bytes": 11575,
-      "sha256": "540df5ebd5bddc6759ea95808d78809cf2c4ec5323a82865dc1c5fb05793e466"
+      "bytes": 11624,
+      "sha256": "ba008d50ad1b5fdbf4d723e4691158dfa128ba17bc03fcb9aced1bd7094565a0"
     },
     {
       "path": "packages/uma-workflows/pyproject.toml",
-      "bytes": 1287,
-      "sha256": "82700e6c16195633cc94a24e2f717e9cd4b4da3c6620cf855c04782131d2add8"
+      "bytes": 1291,
+      "sha256": "8c921867da7e64b67be52d31424a692f2e50912f9b81aacf867ce460f77e5304"
     },
     {
       "path": "packages/uma-workflows/src/uma_workflows/__init__.py",

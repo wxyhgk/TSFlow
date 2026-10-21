@@ -55,7 +55,7 @@ git tag v0.1.4
 git push origin v0.1.4
 ```
 
-也可以在 GitHub Actions 页面手动运行 `Publish ts-flow to PyPI`。
+也可以在 GitHub Actions 页面手动运行 `Publish tsflow-chem to PyPI`。
 
 对导出目录完成源码与许可证审查后，在导出目录执行：
 

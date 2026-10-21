@@ -1,6 +1,6 @@
-# TSFlow workflow engine (`ts-flow`)
+# TSFlow workflow engine (`tsflow-chem`)
 
-`ts-flow` is the reusable TSFlow computational chemistry engine shared by
+`tsflow-chem` is the reusable TSFlow computational chemistry engine shared by
 the FastAPI service, command-line tools, benchmarks, and research studies.
 The Python import namespace remains `uma_workflows`, and the source directory
 remains `packages/uma-workflows/`. TSFlow is the public project name.
@@ -74,19 +74,19 @@ lowest mode.
 Install only the capabilities a project needs:
 
 ```bash
-pip install ts-flow
-pip install "ts-flow[frequencies]"
-pip install "ts-flow[dmf]"
-pip install "ts-flow[sella]"
-pip install "ts-flow[uma]"
-pip install "ts-flow[all]"
+pip install tsflow-chem
+pip install "tsflow-chem[frequencies]"
+pip install "tsflow-chem[dmf]"
+pip install "tsflow-chem[sella]"
+pip install "tsflow-chem[uma]"
+pip install "tsflow-chem[all]"
 ```
 
-The PyPI name `tsflow` belongs to another project. For an unreleased development
+The PyPI names `tsflow` and `ts-flow` belong to other projects. For an unreleased development
 version, install directly from GitHub:
 
 ```bash
-pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
+pip install "tsflow-chem @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
 ```
 
 The `dmf` and `all` extras require an IPOPT installation usable by `cyipopt`.
