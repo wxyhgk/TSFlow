@@ -71,17 +71,26 @@ initialized from the already screened primary imaginary mode; it does not
 silently diagonalize the raw Hessian again and choose a potentially different
 lowest mode.
 
-Install from GitHub until the first PyPI release:
+Install only the capabilities a project needs:
+
+```bash
+pip install ts-flow
+pip install "ts-flow[frequencies]"
+pip install "ts-flow[dmf]"
+pip install "ts-flow[sella]"
+pip install "ts-flow[uma]"
+pip install "ts-flow[all]"
+```
+
+The PyPI name `tsflow` belongs to another project. For an unreleased development
+version, install directly from GitHub:
 
 ```bash
 pip install "ts-flow @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
-pip install "ts-flow[all] @ git+https://github.com/wxyhgk/TSFlow.git#subdirectory=packages/uma-workflows"
 ```
 
-After publication to PyPI, install only the capabilities a project needs with
-`pip install ts-flow`, or select extras such as `ts-flow[frequencies]`,
-`ts-flow[dmf]`, `ts-flow[sella]`, `ts-flow[uma]`, and `ts-flow[all]`.
-The PyPI name `tsflow` belongs to another project.
+The `dmf` and `all` extras require an IPOPT installation usable by `cyipopt`.
+UMA model weights must be obtained separately under their upstream terms.
 
 The base package contains NumPy/ASE geometry, geomeTRIC normal-mode analysis,
 and validation utilities. Public packages use lazy exports, so

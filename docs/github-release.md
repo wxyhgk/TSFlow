@@ -37,6 +37,26 @@ python3 scripts/export-source.py --output outputs/github-source-20261021
 
 ## 发布仓库
 
+PyPI 发布工作流位于 `.github/workflows/publish-pypi.yml`，使用 GitHub
+Trusted Publishing，不把 API token 写入仓库。首次发布前，在 PyPI 账户中新增
+Trusted Publisher：
+
+| 字段 | 值 |
+| --- | --- |
+| Owner | `wxyhgk` |
+| Repository | `TSFlow` |
+| Workflow name | `publish-pypi.yml` |
+| Environment | `pypi` |
+
+配置完成后，创建版本标签即可触发发布：
+
+```sh
+git tag v0.1.4
+git push origin v0.1.4
+```
+
+也可以在 GitHub Actions 页面手动运行 `Publish ts-flow to PyPI`。
+
 对导出目录完成源码与许可证审查后，在导出目录执行：
 
 ```sh

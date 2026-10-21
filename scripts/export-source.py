@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # because someone forgot to add a .gitignore rule.
 SOURCE_PATHS = (
     ".gitignore", "README.md", "README.en.md", "AI.md", "PROJECT_STATUS.md", "LICENSE", "NOTICE",
+    ".github/workflows/publish-pypi.yml",
     "backend/app", "backend/tests", "backend/pyproject.toml",
     "backend/README.md", "backend/.env.example",
     # The frontend remains a local workbench until its build and browser flow

@@ -5,7 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "ts-flow"
 version = "0.1.4"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
 description = "TSFlow transition-state workflows and validation tools"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,6 +15,12 @@ dependencies = [
   "geometric>=1.1,<2.0",
   "numpy>=1.26,<3.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/wxyhgk/TSFlow"
+Repository = "https://github.com/wxyhgk/TSFlow"
+Documentation = "https://github.com/wxyhgk/TSFlow/blob/main/docs/transition-state-workflow.md"
+Issues = "https://github.com/wxyhgk/TSFlow/issues"
 
 [project.optional-dependencies]
 frequencies = [

@@ -1,10 +1,15 @@
 {
-  "created_utc": "2026-10-21T11:08:35.726904+00:00",
-  "source_head": "0355d9c36cb0e9623c5d49ebbe7d800500f9b45a",
+  "created_utc": "2026-10-21T11:15:53.509434+00:00",
+  "source_head": "95e1f64f6f7c8fa6dd1528a2e7c24229baa27e97",
   "source_has_local_changes": false,
   "scope": "Current working-tree source snapshot; no Git history, weights or local research",
-  "file_count": 308,
+  "file_count": 310,
   "files": [
+    {
+      "path": ".github/workflows/publish-pypi.yml",
+      "bytes": 770,
+      "sha256": "bd725991133a10ab8c3de66ec192399eb070eb26c997fe150f6f051ce70f0a2c"
+    },
     {
       "path": ".gitignore",
       "bytes": 765,
@@ -967,8 +972,8 @@
     },
     {
       "path": "docs/github-release.md",
-      "bytes": 3280,
-      "sha256": "1f7578e3fa92e0a13ecca06c9d6e0d1c6b1618ec903968bf51de42eda8ada105"
+      "bytes": 3806,
+      "sha256": "ece083649d8e743786803d9b4e01e5f18150cca6ae80e817db890e5ac349a41d"
     },
     {
       "path": "docs/project-layout.md",
@@ -1021,14 +1026,19 @@
       "sha256": "8d6b57a33c6a139f80cd706f253a030bd9d93cbfb1bbe33fba066e23b7e8c29e"
     },
     {
+      "path": "packages/uma-workflows/LICENSE",
+      "bytes": 1076,
+      "sha256": "6d6f2d1d8239e628ee574bfe688473b0e0c89e913de306194d615a5dcb133332"
+    },
+    {
       "path": "packages/uma-workflows/README.md",
-      "bytes": 11504,
-      "sha256": "9ebdf5d0cff90915e496e84163062fda0cd4d66d43b4b31b041376178ec18796"
+      "bytes": 11575,
+      "sha256": "540df5ebd5bddc6759ea95808d78809cf2c4ec5323a82865dc1c5fb05793e466"
     },
     {
       "path": "packages/uma-workflows/pyproject.toml",
-      "bytes": 993,
-      "sha256": "c1f880d3412c3b6bb2445e923f806bae5280e80a29e52d80d81409efec121e71"
+      "bytes": 1287,
+      "sha256": "82700e6c16195633cc94a24e2f717e9cd4b4da3c6620cf855c04782131d2add8"
     },
     {
       "path": "packages/uma-workflows/src/uma_workflows/__init__.py",
@@ -1502,8 +1512,8 @@
     },
     {
       "path": "scripts/export-source.py",
-      "bytes": 4697,
-      "sha256": "86a8ef5a76e835fbaf5ceda308e517280bd422727a8cf70d002c35cf52b1fa47"
+      "bytes": 4739,
+      "sha256": "ee988015d2beb50b2bd66f47cb422d0f65bd3288fadc175e3b5a62f332c88f14"
     },
     {
       "path": "scripts/install-backend-env.sh",
